@@ -17,13 +17,13 @@
     </div>
 
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-      <a href=""> 
+      <a href="{{ route('admin.loaiphanbon.trangchu') }}"> 
         <div class="card text-center">
           <div class="card-body">
               <i class="fa fa-user fa-5x"></i>
           </div>
           <div class="card-footer text-muted">
-              GIỐNG
+              LOẠI PHÂN BÓN
           </div>
         </div>
       </a>

@@ -29,6 +29,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('cap-nhat', 'LoaiGiongController@capnhat')->name('capnhat');
         Route::delete('xoa/{id}', 'LoaiGiongController@xoa')->name('xoa');
     });
+	Route::prefix('loai-phan-bon')->name('loaiphanbon.')->group(function () {
+        Route::get('/', 'LoaiPhanBonController@trangchu')->name('trangchu');
+        Route::get('tao-moi', 'LoaiPhanBonController@taomoi')->name('taomoi');
+        Route::post('luu', 'LoaiPhanBonController@luu')->name('luu');
+        Route::get('chinh-sua/{id}', 'LoaiPhanBonController@chinhsua')->name('chinhsua');
+        Route::put('cap-nhat', 'LoaiPhanBonController@capnhat')->name('capnhat');
+        Route::delete('xoa/{id}', 'LoaiPhanBonController@xoa')->name('xoa');
+	
 });
 
 Auth::routes();
