@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcom');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
-        return view('home');
+        return view('welcom');
     })->name('dashboard');
 
     //  Loại giống
@@ -29,18 +29,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('cap-nhat', 'LoaiGiongController@capnhat')->name('capnhat');
         Route::delete('xoa/{id}', 'LoaiGiongController@xoa')->name('xoa');
     });
-
-    // Giống
-    Route::prefix('giong')->name('giong.')->group(function () {
-        Route::get('/', 'GiongController@trangchu')->name('trangchu');
-        Route::get('tao-moi', 'GiongController@taomoi')->name('taomoi');
-        Route::post('luu', 'GiongController@luu')->name('luu');
-        Route::get('chinh-sua/{id}', 'GiongController@chinhsua')->name('chinhsua');
-        Route::put('cap-nhat', 'GiongController@capnhat')->name('capnhat');
-        Route::delete('xoa/{id}', 'GiongController@xoa')->name('xoa');
+    Route::prefix('thuoc-bvtv')->name('thuocbvtv.')->group(function () {
+        Route::get('/', 'ThuocBvtvController@trangchu')->name('trangchu');
+        Route::get('tao-moi', 'ThuocBvtvController@taomoi')->name('taomoi');
+        Route::post('luu', 'ThuocBvtvController@luu')->name('luu');
+        Route::get('chinh-sua/{id}', 'ThuocBvtvController@chinhsua')->name('chinhsua');
+        Route::put('cap-nhat', 'ThuocBvtvController@capnhat')->name('capnhat');
+        Route::delete('xoa/{id}', 'ThuocBvtvController@xoa')->name('xoa');
     });
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/welcom', 'HomeController@index')->name('welcom');

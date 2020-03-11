@@ -4,13 +4,13 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-      <a href="{{ route('admin.giong.trangchu') }}"> 
+      <a href="{{ route('admin.thuocbvtv.trangchu') }}"> 
         <div class="card text-center">
           <div class="card-body">
               <i class="fa fa-user fa-5x"></i>
           </div>
           <div class="card-footer text-muted">
-              Giống
+              Thuốc BVTV
           </div>
         </div>
       </a>
