@@ -10,12 +10,12 @@ class LoaiPhanBonController extends Controller
 {
     public function trangchu()
     {
-        return view('admin.loaiphanbon_trangchu', ['dsLoaiPhanBon' => LoaiPhanBon::all()]);
+        return view('admin.loaiphanbon.loaiphanbon_trangchu', ['dsLoaiPhanBon' => LoaiPhanBon::all()]);
     }
 
     public function taomoi()
     {
-        return view('admin.loaiphanbon_taomoi');
+        return view('admin.loaiphanbon.loaiphanbon_taomoi');
     }
 
     public function luu(LoaiPhanBonRequest $request)
@@ -34,7 +34,7 @@ class LoaiPhanBonController extends Controller
 
     public function chinhsua($id)
     {
-        return view('admin.loaiphanbon_chinhsua', ['loaiPhanBon' => LoaiPhanBon::findOrFail($id)]);
+        return view('admin.loaiphanbon.loaiphanbon_chinhsua', ['loaiPhanBon' => LoaiPhanBon::findOrFail($id)]);
     }
 
     public function capnhat(LoaiPhanBonRequest $request)
