@@ -10,9 +10,8 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
-
 $app = new Illuminate\Foundation\Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
+	$_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
 /*
@@ -25,20 +24,19 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
-
 $app->singleton(
-    Illuminate\Contracts\Http\Kernel::class,
-    App\Http\Kernel::class
+	Illuminate\Contracts\Http\Kernel::class,
+	App\Http\Kernel::class
 );
 
 $app->singleton(
-    Illuminate\Contracts\Console\Kernel::class,
-    App\Console\Kernel::class
+	Illuminate\Contracts\Console\Kernel::class,
+	App\Console\Kernel::class
 );
 
 $app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    App\Exceptions\Handler::class
+	Illuminate\Contracts\Debug\ExceptionHandler::class,
+	App\Exceptions\Handler::class
 );
 
 /*
@@ -51,5 +49,4 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-
 return $app;

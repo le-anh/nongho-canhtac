@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,26 +13,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+
+
+Route::prefix('farmer')->name('farmer.')->group(function () {
+
+	Route::get('dashboard', function () {
+		return view('farmer.dashboard');
+	})->name('dashboard');
+
+	Route::get('', function () {
+		return view('farmer.dashboard');
+	})->name('dashboard');
+
+	Route::prefix('loai-giong')->name('loaigiong.')->group(function () {
+
+		Route::get('', 'LoaiGiongController@getIndex')->name('index');
+		Route::get('create', 'LoaiGiongController@getCreate')->name('create');
+		Route::post('store', 'LoaiGiongController@postCreate')->name('store');
+		Route::get('edit/{id}', 'LoaiGiongController@getEdit')->name('edit');
+		Route::put('update', 'LoaiGiongController@postEdit')->name('update');
+		Route::delete('delete', 'LoaiGiongController@postDelete')->name('delete');
+
+	});
+
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', function () {
-        return view('home');
-    })->name('dashboard');
-
-    //  Loại giống
-    Route::prefix('loai-thuoc-bvtv')->name('loaithuocbvtv.')->group(function () {
-        Route::get('/', 'LoaiThuocBvtvController@trangchu')->name('trangchu');
-        Route::get('tao-moi', 'LoaiThuocBvtvController@taomoi')->name('taomoi');
-        Route::post('luu', 'LoaiThuocBvtvController@luu')->name('luu');
-        Route::get('chinh-sua/{id}', 'LoaiThuocBvtvController@chinhsua')->name('chinhsua');
-        Route::put('cap-nhat', 'LoaiThuocBvtvController@capnhat')->name('capnhat');
-        Route::delete('xoa/{id}', 'LoaiThuocBvtvController@xoa')->name('xoa');
-    });
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

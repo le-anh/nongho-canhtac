@@ -50,7 +50,7 @@ class Router implements BindingRegistrar, RegistrarContract
     /**
      * The route collection instance.
      *
-     * @var \Illuminate\Routing\RouteCollection
+     * @var \Illuminate\Routing\RouteCollectionInterface
      */
     protected $routes;
 
@@ -384,7 +384,7 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     protected function updateGroupStack(array $attributes)
     {
-        if (! empty($this->groupStack)) {
+        if ($this->hasGroupStack()) {
             $attributes = $this->mergeWithLastGroup($attributes);
         }
 
@@ -424,7 +424,7 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     public function getLastGroupPrefix()
     {
-        if (! empty($this->groupStack)) {
+        if ($this->hasGroupStack()) {
             $last = end($this->groupStack);
 
             return $last['prefix'] ?? '';
@@ -509,7 +509,7 @@ class Router implements BindingRegistrar, RegistrarContract
         // Here we'll merge any group "uses" statement if necessary so that the action
         // has the proper clause for this property. Then we can simply set the name
         // of the controller on the action and return the action array for usage.
-        if (! empty($this->groupStack)) {
+        if ($this->hasGroupStack()) {
             $action['uses'] = $this->prependGroupNamespace($action['uses']);
         }
 
@@ -1142,78 +1142,6 @@ class Router implements BindingRegistrar, RegistrarContract
     }
 
     /**
-     * Register the typical authentication routes for an application.
-     *
-     * @param  array  $options
-     * @return void
-     */
-    public function auth(array $options = [])
-    {
-        // Authentication Routes...
-        $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-        $this->post('login', 'Auth\LoginController@login');
-        $this->post('logout', 'Auth\LoginController@logout')->name('logout');
-
-        // Registration Routes...
-        if ($options['register'] ?? true) {
-            $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-            $this->post('register', 'Auth\RegisterController@register');
-        }
-
-        // Password Reset Routes...
-        if ($options['reset'] ?? true) {
-            $this->resetPassword();
-        }
-
-        // Password Confirmation Routes...
-        if ($options['confirm'] ??
-            class_exists($this->prependGroupNamespace('Auth\ConfirmPasswordController'))) {
-            $this->confirmPassword();
-        }
-
-        // Email Verification Routes...
-        if ($options['verify'] ?? false) {
-            $this->emailVerification();
-        }
-    }
-
-    /**
-     * Register the typical reset password routes for an application.
-     *
-     * @return void
-     */
-    public function resetPassword()
-    {
-        $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-        $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-        $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-    }
-
-    /**
-     * Register the typical confirm password routes for an application.
-     *
-     * @return void
-     */
-    public function confirmPassword()
-    {
-        $this->get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
-        $this->post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
-    }
-
-    /**
-     * Register the typical email verification routes for an application.
-     *
-     * @return void
-     */
-    public function emailVerification()
-    {
-        $this->get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-        $this->get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-        $this->post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-    }
-
-    /**
      * Set the unmapped global resource parameters to singular.
      *
      * @param  bool  $singular
@@ -1249,7 +1177,7 @@ class Router implements BindingRegistrar, RegistrarContract
     /**
      * Get the underlying route collection.
      *
-     * @return \Illuminate\Routing\RouteCollection
+     * @return \Illuminate\Routing\RouteCollectionInterface
      */
     public function getRoutes()
     {
@@ -1269,6 +1197,21 @@ class Router implements BindingRegistrar, RegistrarContract
         }
 
         $this->routes = $routes;
+
+        $this->container->instance('routes', $this->routes);
+    }
+
+    /**
+     * Set the compiled route collection instance.
+     *
+     * @param  array  $routes
+     * @return void
+     */
+    public function setCompiledRoutes(array $routes)
+    {
+        $this->routes = (new CompiledRouteCollection($routes['compiled'], $routes['attributes']))
+            ->setRouter($this)
+            ->setContainer($this->container);
 
         $this->container->instance('routes', $this->routes);
     }
