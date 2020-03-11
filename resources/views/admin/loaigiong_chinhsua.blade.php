@@ -12,6 +12,11 @@
         @method('PUT')
         <input type="hidden" name="id" id="id" value="{{ $loaiGiong->id }}">
         <div class="form-group">
+            <label for="tenloaigiong"> Mã loại giống </label>
+            <input type="text" name="maloaigiong" id="maloaigiong" class="form-control @error('id') is-invalid @enderror" value="{{old('id', $loaiGiong->id)}}" placeholder="Mã loại giống" autofocus>
+            @error('tenloaigiong') <div class="alert alert-danger"> {{$message}} </div>  @enderror
+        </div>
+        <div class="form-group">
             <label for="tenloaigiong"> Tên loại giống </label>
             <input type="text" name="tenloaigiong" id="tenloaigiong" class="form-control @error('tenloaigiong') is-invalid @enderror" value="{{old('tenloaigiong', $loaiGiong->tenloaigiong)}}" placeholder="Tên loại giống" autofocus>
             @error('tenloaigiong') <div class="alert alert-danger"> {{$message}} </div>  @enderror

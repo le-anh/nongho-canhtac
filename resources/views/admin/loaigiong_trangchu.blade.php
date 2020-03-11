@@ -10,6 +10,7 @@
     <thead>
       <tr>
         <th class="text-center"> # </th>
+        <th> Mã loại giống </th>
         <th> Loại giống </th>
         <th> Mô tả </th>
         <th></th>
@@ -19,6 +20,7 @@
       @foreach($dsLoaiGiong ?? [] as $loaiGiong)
         <tr>
           <td class="text-center"> {{ $loop->iteration }} </td>
+          <td> {{ $loaiGiong->id }} </td>
           <td> {{ $loaiGiong->tenloaigiong }} </td>
           <td> {{ $loaiGiong->mota }} </td>
           <td class="text-center">

@@ -22,6 +22,7 @@ class LoaiGiongController extends Controller
     {
         try {
             $loaiGiong = new LoaiGiong();
+            $loaiGiong->id = $request->id;
             $loaiGiong->tenloaigiong = $request->tenloaigiong;
             $loaiGiong->mota = $request->mota;
             $loaiGiong->save();
@@ -40,6 +41,7 @@ class LoaiGiongController extends Controller
     {
         $loaiGiong = LoaiGiong::findOrFail($request->id);
         try {
+            $loaiGiong->id = $request->id;
             $loaiGiong->tenloaigiong = $request->tenloaigiong;
             $loaiGiong->mota = $request->mota;
             $loaiGiong->save();

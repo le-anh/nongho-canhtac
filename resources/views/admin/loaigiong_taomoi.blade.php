@@ -10,6 +10,11 @@
     <form action="{{route('admin.loaigiong.luu')}}" method="post">
         @csrf()
         <div class="form-group">
+            <label for="id"> Mã loại giống </label>
+            <input type="text" name="id" id="id" class="form-control @error('id') is-invalid @enderror" value="{{old('id')}}" placeholder="Mã loại giống" autofocus>
+            @error('id') <div class="alert alert-danger"> {{$message}} </div>  @enderror
+        </div>
+        <div class="form-group">
             <label for="tenloaigiong"> Tên loại giống </label>
             <input type="text" name="tenloaigiong" id="tenloaigiong" class="form-control @error('tenloaigiong') is-invalid @enderror" value="{{old('tenloaigiong')}}" placeholder="Tên loại giống" autofocus>
             @error('tenloaigiong') <div class="alert alert-danger"> {{$message}} </div>  @enderror
