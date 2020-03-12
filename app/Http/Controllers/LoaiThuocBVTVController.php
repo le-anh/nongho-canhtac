@@ -56,8 +56,7 @@ class LoaiThuocBVTVController extends Controller
 	public function getDelete($id)
 	{
 		
-	}
-	
+	}	
 	public function postDelete($id)
 	{
 		try {
