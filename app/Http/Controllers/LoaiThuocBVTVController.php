@@ -14,19 +14,16 @@ class LoaiThuocBVTVController extends Controller
 {
 	public function getIndex()
 	{
-		//
 		return view('farmer.loaithuocbvtv_index', ['dsLoaiThuocBvtv' => LoaiThuocBvtv::all()]);
 	}
 	
 	public function getCreate()
 	{
-		//
 		return view('farmer.loaithuocbvtv_create');
 	}
 	
 	public function postCreate(Request $request)
 	{
-		//
 		try {
 			$loaiThuocBvtv = new LoaiThuocBvtv();
 			$loaiThuocBvtv->tenloaithuocbvtv = $request->tenloaithuocbvtv;
@@ -36,18 +33,15 @@ class LoaiThuocBVTVController extends Controller
 		} catch (\Throwable $th) {
 				return redirect()->back()->withInput()->with(['result' => False, 'message'=> $th->getMessage()]);
 		}
-
 	}
 	
 	public function getEdit($id)
 	{
-		//
 		return view('farmer.loaithuocbvtv_edit', ['loaiThuocBvtv' => LoaiThuocBvtv::findOrFail($id)]);
 	}
 	
 	public function postEdit(Request $request)
 	{
-		//
 		$loaiThuocBvtv = LoaiThuocBvtv::findOrFail($request->loaithuocbvtvid);
 		try {
 			$loaiThuocBvtv->tenloaithuocbvtv = $request->tenloaithuocbvtv;
@@ -61,13 +55,11 @@ class LoaiThuocBVTVController extends Controller
 	
 	public function getDelete($id)
 	{
-		//
 		
 	}
 	
 	public function postDelete($id)
 	{
-		//
 		try {
 			LoaiThuocBvtv::destroy($id);
 			return redirect()->route('farmer.loaithuocbvtv.trangchu')->with(['result' => True, 'message' => "Xóa thành công!"]);
