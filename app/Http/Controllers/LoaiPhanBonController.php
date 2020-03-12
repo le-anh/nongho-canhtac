@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Người thực hiện	: Họ Và Tên
- * Ngày cập nhật	: dd/mm/yyyy
+ * Người thực hiện	: Võ Phát Đạt
+ * Ngày cập nhật	: 12/03/2020
  */
 
 namespace App\Http\Controllers;
@@ -56,13 +56,12 @@ class LoaiPhanBonController extends Controller
 	
 	public function getDelete($id)
 	{
-		//
+		
 	}
 	
 	public function postDelete($id)
 	{
 		try {
-			//dd("Cdac");
 			LoaiPhanBon::destroy($id);
 			return redirect()->route('farmer.loaiphanbon.index')->with(['result' => True, 'message' => "Xóa thành công!"]);
 		} catch (\Throwable $th) {
