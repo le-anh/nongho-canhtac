@@ -11,5 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ThuocBVTV extends Model
 {
-	//
+	protected $table = 'thuocbvtv';
+	//code
 }
