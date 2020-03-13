@@ -32,7 +32,17 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::post('store', 'LoaiGiongController@postCreate')->name('store');
 		Route::get('edit/{id}', 'LoaiGiongController@getEdit')->name('edit');
 		Route::put('update', 'LoaiGiongController@postEdit')->name('update');
-		Route::delete('delete', 'LoaiGiongController@postDelete')->name('delete');
+		Route::delete('delete/{id}', 'LoaiGiongController@postDelete')->name('delete');
+
+	});
+	Route::prefix('loai-phan-bon')->name('loaiphanbon.')->group(function () {
+
+		Route::get('', 'LoaiPhanBonController@getIndex')->name('index');
+		Route::get('create', 'LoaiPhanBonController@getCreate')->name('create');
+		Route::post('store', 'LoaiPhanBonController@postCreate')->name('store');
+		Route::get('edit/{id}', 'LoaiPhanBonController@getEdit')->name('edit');
+		Route::put('update', 'LoaiPhanBonController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'LoaiPhanBonController@postDelete')->name('delete');
 
 	});
 
