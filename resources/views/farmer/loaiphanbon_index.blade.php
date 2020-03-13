@@ -14,7 +14,7 @@
     <a href=" {{ route('farmer.loaiphanbon.create') }} "> <button type="button" class="btn btn-success btn-floated"><span class="fa fa-plus"></span></button> </a>
 
     <div class="d-md-flex align-items-md-start">
-      <h1 class="page-title mr-sm-auto"> Loại loại phân bón </h1>
+      <h1 class="page-title mr-sm-auto"> Loại phân bón </h1>
       <div id="dt-buttons" class="btn-toolbar"></div>
     </div>
   </header>
