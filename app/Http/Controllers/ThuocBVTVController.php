@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\ThuocBVTV;
 use Illuminate\Http\Request;
+use App\LoaiThuocBVTV;
 
 class ThuocBVTVController extends Controller
 {
@@ -19,7 +20,8 @@ class ThuocBVTVController extends Controller
 	
 	public function getCreate()
 	{
-		return view('farmer.thuocbvtv_create');
+		$loaiThuocBvtvId = LoaiThuocBVTV::all();
+   		return view('farmer.thuocbvtv_create', compact('loaiThuocBvtvId'));
 	}
 	
 	public function postCreate(Request $request)
@@ -38,6 +40,7 @@ class ThuocBVTVController extends Controller
 		} catch (\Throwable $th) {
 				return redirect()->back()->withInput()->with(['result' => False, 'message'=> $th->getMessage()]);
 		}
+		return view('farmer.thuocbvtv_index', ['dsThuocBvtv' => ThuocBvtv::all()]);
 	}
 	
 	public function getEdit($id)

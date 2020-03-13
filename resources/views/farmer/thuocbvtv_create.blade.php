@@ -16,6 +16,7 @@
       <h1 class="page-title mr-sm-auto"> Thuốc Bvtv <small> Tạo mới </small> </h1>
     </div>
   </header>
+  
   <div class="page-section">
     <div class="card card-fluid">
       <div class="card-body">
@@ -26,9 +27,13 @@
           @csrf()
           <fieldset>
             <div class="form-group">
-                <label for="loaithuocbvtv_id">Loại thuốc bảo vệ thực vật id <abbr title="Required">*</abbr></label>
-                <input type="text" class="form-control @error('loaithuocbvtv_id') is-invalid @enderror" id="loaithuocbvtv_id" name="loaithuocbvtv_id" value="{{old('loaithuocbvtv_id')}}" placeholder="Loại thuốc bảo vệ thực vật id" autofocus>
-                @error('loaithuocbvtv_id')  <div class="invalid-feedback"> <i class="fa fa-exclamation-circle fa-fw"></i> {{ $message }} </div>  @enderror
+              <label for="loaithuocbvtv_id">Loại thuốc bảo vệ thực vật id <abbr title="Required">*</abbr></label>
+              <select class="form-control" id="loaithuocbvtv_id" name="loaithuocbvtv_id">
+                <option value="0" disable="true" selected="true">== Chọn ID ==</option>
+                @foreach($loaiThuocBvtvId as $key => $value)
+                  <option value="{{ $value->id }}">{{ $value->tenloaithuocbvtv }}</option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
               <label for="tenthuocbvtv">Tên thuốc BVTV <abbr title="Required">*</abbr></label>
@@ -47,8 +52,8 @@
             </div>
             <div class="form-group">
                 <label for="thanhphanhamluong">Thành phần hàm lượng <abbr title="Required">*</abbr></label>
-                <input type="text" class="form-control @error('thanhphanhamluong') is-invalid @enderror" id="thanhphanhamluong" name="thanhphanhamluong" value="{{old('thanhphanhamluong')}}" placeholder="Thành phần hàm lượng" autofocus>
-                @error('thanhphanhamluong')  <div class="invalid-feedback"> <i class="fa fa-exclamation-circle fa-fw"></i> {{ $message }} </div>  @enderror
+                <textarea class="form-control @error('thanhphanhamluong') is-invalid @enderror" id="thanhphanhamluong" name="thanhphanhamluong" rows="5" placeholder="Thành phần hàm lượng" autofocus>{{old('thanhphanhamluong')}}</textarea>
+                @error('thanhphanhamluong')  <div class="invalid-feedback"> <i class="fa fa-exclamation-circle fa-fw"></i> {{ $message }} </div>  @enderror</textarea>
             </div>
             <div class="form-group">
                 <label for="nhacungcap">Nhà cung cấp <abbr title="Required">*</abbr></label>
