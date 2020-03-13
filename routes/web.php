@@ -38,7 +38,7 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 
 	});
 
-	/*Loai Thuoc Bvtv*/ 
+	/*Loai Thuoc  Bvtv*/ 
 	Route::prefix('loai-thuoc-bvtv')->name('loaithuocbvtv.')->group(function () {
 
 		Route::get('', 'LoaiThuocBVTVController@getIndex')->name('index');
