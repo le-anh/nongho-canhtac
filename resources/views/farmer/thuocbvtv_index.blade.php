@@ -43,7 +43,7 @@
           @foreach($dsThuocBvtv ?? [] as $thuocBvtv)
           <tr>
             <td class="text-center"> {{ $loop->iteration }} </td>
-            <td> {{ $thuocBvtv->loaithuocbvtv_id }} </td>
+            <td> {{ $thuocBvtv->loaithuocbvtv->tenloaithuocbvtv }} </td>
             <td> {{ $thuocBvtv->tenthuocbvtv }} </td>
             <td> {{ $thuocBvtv->mucdich }} </td>
             <td> {{ $thuocBvtv->nguongoc }} </td>

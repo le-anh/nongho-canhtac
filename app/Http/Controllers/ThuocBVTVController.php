@@ -20,8 +20,7 @@ class ThuocBVTVController extends Controller
 	
 	public function getCreate()
 	{
-		$loaiThuocBvtvId = LoaiThuocBVTV::all();
-   		return view('farmer.thuocbvtv_create', compact('loaiThuocBvtvId'));
+		return view('farmer.thuocbvtv_create', ['dsLoaiThuocBVTV' => LoaiThuocBVTV::all()]);
 	}
 	
 	public function postCreate(Request $request)

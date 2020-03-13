@@ -30,8 +30,8 @@
               <label for="loaithuocbvtv_id">Loại thuốc bảo vệ thực vật id <abbr title="Required">*</abbr></label>
               <select class="form-control" id="loaithuocbvtv_id" name="loaithuocbvtv_id">
                 <option value="0" disable="true" selected="true">== Chọn ID ==</option>
-                @foreach($loaiThuocBvtvId as $key => $value)
-                  <option value="{{ $value->id }}">{{ $value->tenloaithuocbvtv }}</option>
+                @foreach($dsLoaiThuocBVTV as $key => $loaiThuocBVTV)
+                  <option value="{{ $loaiThuocBVTV->id }}">{{ $loaiThuocBVTV->tenloaithuocbvtv }}</option>
                 @endforeach
               </select>
             </div>
