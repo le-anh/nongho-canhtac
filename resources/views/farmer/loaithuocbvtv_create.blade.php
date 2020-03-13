@@ -26,8 +26,8 @@
           @csrf()
           <fieldset>
             <div class="form-group">
-              <label for="tenloaithuocbvtv">Tên loại giống <abbr title="Required">*</abbr></label>
-              <input type="text" class="form-control @error('tenloaithuocbvtv') is-invalid @enderror" id="tenloaithuocbvtv" name="tenloaithuocbvtv" value="{{old('tenloaithuocbvtv')}}" placeholder="Tên loại thuốc" autofocus>
+              <label for="tenloaithuocbvtv">Tên loại thuốc bảo vệ thực vật <abbr title="Required">*</abbr></label>
+              <input type="text" class="form-control @error('tenloaithuocbvtv') is-invalid @enderror" id="tenloaithuocbvtv" name="tenloaithuocbvtv" value="{{old('tenloaithuocbvtv')}}" placeholder="Tên loại thuốc bảo vệ thực" autofocus>
               @error('tenloaithuocbvtv')  <div class="invalid-feedback"> <i class="fa fa-exclamation-circle fa-fw"></i> {{ $message }} </div>  @enderror
             </div>
             
