@@ -49,6 +49,18 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::delete('delete/{id}', 'LoaiThuocBVTVController@postDelete')->name('delete');
 
 	});
+
+	/*Thuoc  Bvtv*/ 
+	Route::prefix('thuoc-bvtv')->name('thuocbvtv.')->group(function () {
+
+		Route::get('', 'ThuocBVTVController@getIndex')->name('index');
+		Route::get('create', 'ThuocBVTVController@getCreate')->name('create');
+		Route::post('store', 'ThuocBVTVController@postCreate')->name('store');
+		Route::get('edit/{id}', 'ThuocBVTVController@getEdit')->name('edit');
+		Route::put('update', 'ThuocBVTVController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'ThuocBVTVController@postDelete')->name('delete');
+
+	});
   
   /* Loai Phan bon */
 	Route::prefix('loai-phan-bon')->name('loaiphanbon.')->group(function () {
