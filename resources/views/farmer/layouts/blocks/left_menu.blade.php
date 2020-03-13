@@ -32,6 +32,9 @@
 			<li class="menu-item">
 				<a href=" {{ route('farmer.loaigiong.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại giống</span></a>
 			</li>
+			<li class="menu-item">
+				<a href=" {{ route('farmer.loaiphanbon.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại phân bón</span></a>
+			</li>
 
 			<li class="menu-item">
 				<a href=" {{ route('farmer.loaithuocbvtv.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại Thuốc Bvtv</span></a>
