@@ -61,6 +61,16 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'LoaiPhanBonController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'LoaiPhanBonController@postDelete')->name('delete');
 	});
+	/* Phan Bon */
+	Route::prefix('phan-bon')->name('phanbon.')->group(function () {
+
+		Route::get('', 'PhanBonController@getIndex')->name('index');
+		Route::get('create', 'PhanBonController@getCreate')->name('create');
+		Route::post('store', 'PhanBonController@postCreate')->name('store');
+		Route::get('edit/{id}', 'PhanBonController@getEdit')->name('edit');
+		Route::put('update', 'PhanBonController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'PhanBonController@postDelete')->name('delete');
+	});
 
 });
 
