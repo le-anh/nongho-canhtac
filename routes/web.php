@@ -84,6 +84,17 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'LoaiPhanBonController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'LoaiPhanBonController@postDelete')->name('delete');
 	});
+  
+	/* Phan Bon */
+	Route::prefix('phan-bon')->name('phanbon.')->group(function () {
+
+		Route::get('', 'PhanBonController@getIndex')->name('index');
+		Route::get('create', 'PhanBonController@getCreate')->name('create');
+		Route::post('store', 'PhanBonController@postCreate')->name('store');
+		Route::get('edit/{id}', 'PhanBonController@getEdit')->name('edit');
+		Route::put('update', 'PhanBonController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'PhanBonController@postDelete')->name('delete');
+	});
 
 	/* Loai Vat Tu */
 	Route::prefix('loai-vat-tu')->name('loaivattu.')->group(function () {
@@ -96,7 +107,28 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::delete('delete/{id}', 'LoaiVatTuController@postDelete')->name('delete');
 
 	});
+  
+  /* Loai Tieu Chuan SX */
+	Route::prefix('loai-tieu-chuan-san-xuat')->name('loaitieuchuansx.')->group(function () {
 
+		Route::get('', 'LoaiTieuChuanSXController@getIndex')->name('index');
+		Route::get('create', 'LoaiTieuChuanSXController@getCreate')->name('create');
+		Route::post('store', 'LoaiTieuChuanSXController@postCreate')->name('store');
+		Route::get('edit/{id}', 'LoaiTieuChuanSXController@getEdit')->name('edit');
+		Route::put('update', 'LoaiTieuChuanSXController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'LoaiTieuChuanSXController@postDelete')->name('delete');
+	});
+  
+	/* Tieu Chuan SX */
+	Route::prefix('tieu-chuan-san-xuat')->name('tieuchuansx.')->group(function () {
+
+		Route::get('', 'TieuChuanSXController@getIndex')->name('index');
+		Route::get('create', 'TieuChuanSXController@getCreate')->name('create');
+		Route::post('store', 'TieuChuanSXController@postCreate')->name('store');
+		Route::get('edit/{id}', 'TieuChuanSXController@getEdit')->name('edit');
+		Route::put('update', 'TieuChuanSXController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'TieuChuanSXController@postDelete')->name('delete');
+	});
 });
 
 

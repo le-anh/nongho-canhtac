@@ -11,5 +11,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoaiTieuChuanSX extends Model
 {
-	//
+	protected $table = 'loaitieuchuansx';
 }

@@ -11,5 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class TieuChuanSX extends Model
 {
-	//
+	protected $table ='tieuchuansx';
+	public function LoaiTieuChuanSX()
+	{
+		return $this->belongsTo('App\LoaiTieuChuanSX', 'loaitieuchuansx_id');
+	}
 }
