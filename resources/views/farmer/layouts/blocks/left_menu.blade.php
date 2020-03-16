@@ -33,6 +33,9 @@
 				<a href=" {{ route('farmer.loaigiong.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại giống</span></a>
 			</li>
 			<li class="menu-item">
+				<a href=" {{ route('farmer.giong.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Giống</span></a>
+			</li>
+			<li class="menu-item">
 				<a href=" {{ route('farmer.loaiphanbon.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại phân bón</span></a>
 			</li>
 
@@ -42,6 +45,10 @@
 
 			<li class="menu-item">
 				<a href=" {{ route('farmer.thuocbvtv.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Thuốc Bvtv</span></a>
+			</li>
+
+			<li class="menu-item">
+				<a href=" {{ route('farmer.loaivattu.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại vật tư</span></a>
 			</li>
 
 		</ul>

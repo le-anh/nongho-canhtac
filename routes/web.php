@@ -34,7 +34,19 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::post('store', 'LoaiGiongController@postCreate')->name('store');
 		Route::get('edit/{id}', 'LoaiGiongController@getEdit')->name('edit');
 		Route::put('update', 'LoaiGiongController@postEdit')->name('update');
-		Route::delete('delete/{id}', 'LoaiGiongController@getDelete')->name('delete');
+		Route::delete('delete/{id}', 'LoaiGiongController@postDelete')->name('delete');
+
+	});
+
+	/*Giong*/ 
+	Route::prefix('giong')->name('giong.')->group(function () {
+
+		Route::get('', 'GiongController@getIndex')->name('index');
+		Route::get('create', 'GiongController@getCreate')->name('create');
+		Route::post('store', 'GiongController@postCreate')->name('store');
+		Route::get('edit/{id}', 'GiongController@getEdit')->name('edit');
+		Route::put('update', 'GiongController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'GiongController@postDelete')->name('delete');
 
 	});
 
@@ -71,6 +83,18 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::get('edit/{id}', 'LoaiPhanBonController@getEdit')->name('edit');
 		Route::put('update', 'LoaiPhanBonController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'LoaiPhanBonController@postDelete')->name('delete');
+	});
+
+	/* Loai Vat Tu */
+	Route::prefix('loai-vat-tu')->name('loaivattu.')->group(function () {
+
+		Route::get('', 'LoaiVatTuController@getIndex')->name('index');
+		Route::get('create', 'LoaiVatTuController@getCreate')->name('create');
+		Route::post('store', 'LoaiVatTuController@postCreate')->name('store');
+		Route::get('edit/{id}', 'LoaiVatTuController@getEdit')->name('edit');
+		Route::put('update', 'LoaiVatTuController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'LoaiVatTuController@postDelete')->name('delete');
+
 	});
 
 });
