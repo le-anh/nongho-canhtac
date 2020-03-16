@@ -11,10 +11,10 @@
         </li>
       </ol>
     </nav>
-    <a href=" {{ route('farmer.loaithuocbvtv.create') }} "> <button type="button" class="btn btn-success btn-floated"><span class="fa fa-plus"></span></button> </a>
+    <a href=" {{ route('farmer.loaivattu.create') }} "> <button type="button" class="btn btn-success btn-floated"><span class="fa fa-plus"></span></button> </a>
 
     <div class="d-md-flex align-items-md-start">
-      <h1 class="page-title mr-sm-auto"> Loại thuốc bảo vệ thực vật </h1>
+      <h1 class="page-title mr-sm-auto"> Loại vật tư </h1>
       <div id="dt-buttons" class="btn-toolbar"></div>
     </div>
   </header>
@@ -30,21 +30,21 @@
           <thead>
             <tr>
               <th class="text-center"> # </th>
-              <th> Tên loại thuốc </th>
+              <th> Tên loại vật tư </th>
               <th> Mô tả </th>
               <th style="width:100px; min-width:100px;"> &nbsp; </th>
             </tr>
           </thead>
-          @foreach($dsLoaiThuocBvtv ?? [] as $loaiThuocBvtv)
+          @foreach($dsLoaiVatTu ?? [] as $loaiVatTu)
           <tr>
             <td class="text-center"> {{ $loop->iteration }} </td>
-            <td> {{ $loaiThuocBvtv->tenloaithuocbvtv }} </td>
-            <td> {{ $loaiThuocBvtv->mota }} </td>
+            <td> {{ $loaiVatTu->tenloaivattu }} </td>
+            <td> {{ $loaiVatTu->mota }} </td>
             <td class="text-center">
-              <form action="{{route('farmer.loaithuocbvtv.delete', ['id'=>$loaiThuocBvtv->id])}}" method="post">
+              <form action="{{route('farmer.loaivattu.delete', ['id'=>$loaiVatTu->id])}}" method="post">
                 @csrf()
                 @method('DELETE')
-                <a href="{{ route('farmer.loaithuocbvtv.edit', ['id' => $loaiThuocBvtv->id]) }}" class="btn btn-warning btn-sm btn-icon " title="Chỉnh sửa"><i class="fa fa-pencil-alt"></i></a>
+                <a href="{{ route('farmer.loaivattu.edit', ['id' => $loaiVatTu->id]) }}" class="btn btn-warning btn-sm btn-icon " title="Chỉnh sửa"><i class="fa fa-pencil-alt"></i></a>
                 <button type="submit" class="btn btn-danger btn-delete btn-sm btn-icon" title="Xóa"> <i class="fa fa-trash"></i></button>
               </form>
             </td>

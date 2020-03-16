@@ -34,20 +34,43 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::post('store', 'LoaiGiongController@postCreate')->name('store');
 		Route::get('edit/{id}', 'LoaiGiongController@getEdit')->name('edit');
 		Route::put('update', 'LoaiGiongController@postEdit')->name('update');
-		Route::delete('delete/{id}', 'LoaiGiongController@getDelete')->name('delete');
+		Route::delete('delete/{id}', 'LoaiGiongController@postDelete')->name('delete');
 
 	});
 
-	/*Loai Thuoc Bvtv*/ 
+	/*Giong*/ 
+	Route::prefix('giong')->name('giong.')->group(function () {
+
+		Route::get('', 'GiongController@getIndex')->name('index');
+		Route::get('create', 'GiongController@getCreate')->name('create');
+		Route::post('store', 'GiongController@postCreate')->name('store');
+		Route::get('edit/{id}', 'GiongController@getEdit')->name('edit');
+		Route::put('update', 'GiongController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'GiongController@postDelete')->name('delete');
+
+	});
+
+	/*Loai Thuoc  Bvtv*/ 
 	Route::prefix('loai-thuoc-bvtv')->name('loaithuocbvtv.')->group(function () {
 
-		Route::get('', 'LoaiThuocBvtvController@getIndex')->name('index');
-		Route::get('create', 'LoaiThuocBvtvController@getCreate')->name('create');
-		Route::post('store', 'LoaiThuocBvtvController@postCreate')->name('store');
-		Route::get('edit/{id}', 'LoaiThuocBvtvController@getEdit')->name('edit');
-		Route::put('update', 'LoaiThuocBvtvController@postEdit')->name('update');
-		Route::delete('delete/{id}', 'LoaiThuocBvtvController@postDelete')->name('delete');
-		Route::delete('delete/{id}', 'LoaiGiongController@postDelete')->name('delete');
+		Route::get('', 'LoaiThuocBVTVController@getIndex')->name('index');
+		Route::get('create', 'LoaiThuocBVTVController@getCreate')->name('create');
+		Route::post('store', 'LoaiThuocBVTVController@postCreate')->name('store');
+		Route::get('edit/{id}', 'LoaiThuocBVTVController@getEdit')->name('edit');
+		Route::put('update', 'LoaiThuocBVTVController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'LoaiThuocBVTVController@postDelete')->name('delete');
+
+	});
+
+	/*Thuoc  Bvtv*/ 
+	Route::prefix('thuoc-bvtv')->name('thuocbvtv.')->group(function () {
+
+		Route::get('', 'ThuocBVTVController@getIndex')->name('index');
+		Route::get('create', 'ThuocBVTVController@getCreate')->name('create');
+		Route::post('store', 'ThuocBVTVController@postCreate')->name('store');
+		Route::get('edit/{id}', 'ThuocBVTVController@getEdit')->name('edit');
+		Route::put('update', 'ThuocBVTVController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'ThuocBVTVController@postDelete')->name('delete');
 
 	});
   
@@ -61,6 +84,7 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'LoaiPhanBonController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'LoaiPhanBonController@postDelete')->name('delete');
 	});
+  
 	/* Phan Bon */
 	Route::prefix('phan-bon')->name('phanbon.')->group(function () {
 
@@ -71,7 +95,20 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'PhanBonController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'PhanBonController@postDelete')->name('delete');
 	});
-	/* Loai Tieu Chuan SX */
+
+	/* Loai Vat Tu */
+	Route::prefix('loai-vat-tu')->name('loaivattu.')->group(function () {
+
+		Route::get('', 'LoaiVatTuController@getIndex')->name('index');
+		Route::get('create', 'LoaiVatTuController@getCreate')->name('create');
+		Route::post('store', 'LoaiVatTuController@postCreate')->name('store');
+		Route::get('edit/{id}', 'LoaiVatTuController@getEdit')->name('edit');
+		Route::put('update', 'LoaiVatTuController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'LoaiVatTuController@postDelete')->name('delete');
+
+	});
+  
+  /* Loai Tieu Chuan SX */
 	Route::prefix('loai-tieu-chuan-san-xuat')->name('loaitieuchuansx.')->group(function () {
 
 		Route::get('', 'LoaiTieuChuanSXController@getIndex')->name('index');
@@ -81,6 +118,7 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'LoaiTieuChuanSXController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'LoaiTieuChuanSXController@postDelete')->name('delete');
 	});
+  
 	/* Tieu Chuan SX */
 	Route::prefix('tieu-chuan-san-xuat')->name('tieuchuansx.')->group(function () {
 
