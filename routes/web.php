@@ -107,7 +107,19 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::delete('delete/{id}', 'LoaiVatTuController@postDelete')->name('delete');
 
 	});
-  
+
+	/* Vat Tu */
+	Route::prefix('vat-tu')->name('vattu.')->group(function () {
+
+		Route::get('', 'VatTuController@getIndex')->name('index');
+		Route::get('create', 'VatTuController@getCreate')->name('create');
+		Route::post('store', 'VatTuController@postCreate')->name('store');
+		Route::get('edit/{id}', 'VatTuController@getEdit')->name('edit');
+		Route::put('update', 'VatTuController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'VatTuController@postDelete')->name('delete');
+
+	});
+
   /* Loai Tieu Chuan SX */
 	Route::prefix('loai-tieu-chuan-san-xuat')->name('loaitieuchuansx.')->group(function () {
 
@@ -129,6 +141,7 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'TieuChuanSXController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'TieuChuanSXController@postDelete')->name('delete');
 	});
+
 });
 
 

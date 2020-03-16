@@ -50,12 +50,17 @@
 			<li class="menu-item">
 				<a href=" {{ route('farmer.loaivattu.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại vật tư</span></a>
 			</li>
+			<li class="menu-item">
+				<a href=" {{ route('farmer.vattu.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Vật tư</span></a>
+			</li>
+
       <li class="menu-item">
 				<a href=" {{ route('farmer.loaitieuchuansx.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại tiêu chuẩn sản xuất</span></a>
 			</li>
 			<li class="menu-item">
 				<a href=" {{ route('farmer.tieuchuansx.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Tiêu chuẩn sản xuất</span></a>
 			</li>
+
 		</ul>
 	</nav>
 </div>

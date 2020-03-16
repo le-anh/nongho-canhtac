@@ -11,5 +11,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class VatTu extends Model
 {
-	//
+	protected $table = 'vattu';
+
+	public function loaivattu()
+	{
+		return $this->belongsTo('App\LoaiVatTu', 'loaivattu_id');
+	}
+	public function hoptacxa()
+	{
+		return $this->belongsTo('App\HopTacXa', 'hoptacxa_id');
+	}
 }
