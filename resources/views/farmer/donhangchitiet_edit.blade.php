@@ -19,7 +19,7 @@
   <div class="page-section">
     <div class="card card-fluid">
       <div class="card-body">
-
+ 
         @include('layouts.blocks.flash_message')
 
         <form action=" {{ route('farmer.donhangchitiet.update') }} " method="post">

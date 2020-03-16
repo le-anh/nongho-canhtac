@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+ 
 <div class="page-inner">
   <header class="page-title-bar">
     <nav aria-label="breadcrumb">
@@ -16,7 +16,7 @@
     <div class="d-md-flex align-items-md-start">
       <h1 class="page-title mr-sm-auto"> Đơn hàng <small> Tạo mới </small> </h1>
     </div>
-  </header>
+  </header> 
   
   <div class="page-section">
     <div class="card card-fluid">

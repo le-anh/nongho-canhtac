@@ -1,7 +1,7 @@
 @extends('farmer.layouts.master')
 
 @section('content')
-
+ 
 <div class="page-inner">
   <header class="page-title-bar">
     <nav aria-label="breadcrumb">
@@ -16,7 +16,7 @@
       <h1 class="page-title mr-sm-auto"> Đơn hàng chi tiết <small> Tạo mới </small> </h1>
     </div>
   </header>
-  
+   
   <div class="page-section">
     <div class="card card-fluid">
       <div class="card-body">

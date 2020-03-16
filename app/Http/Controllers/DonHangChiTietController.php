@@ -6,13 +6,13 @@
  */
 
 namespace App\Http\Controllers;
-
+ 
 
 use App\DonHang;
 use Illuminate\Http\Request;
 use App\DonHang_ChiTiet;
 use App\VatTu;
-
+ 
 class DonHangChiTietController extends Controller
 {
 	public function getIndex()

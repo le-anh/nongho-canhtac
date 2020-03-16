@@ -28,7 +28,7 @@
 
         <table id="table-datatable-default" class="table">
           <thead>
-            <tr>
+            <tr> 
               <th class="text-center"> # </th>
               <th> Người dùng id </th>
               <th> Ngày đặt </th>
@@ -39,7 +39,7 @@
             </tr>
           </thead>
           @foreach($dsDonHang ?? [] as $donHang)
-          <tr>
+          <tr> 
             <td class="text-center"> {{ $loop->iteration }} </td>
             <td> {{ $donHang->nguoidung->hoten }} </td>
             <td> {{ $donHang->ngaydat }} </td>

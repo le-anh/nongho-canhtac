@@ -23,11 +23,10 @@ class DonHangController extends Controller
 		$dsNguoiDung = NguoiDung::all();
    		return view('farmer.donhang_create', compact('dsNguoiDung'));
 	}
-	
-	
+
 	public function postCreate(Request $request)
 	{
-		try {
+		try { 
 			$donHang = new DonHang();
 			$donHang->nguoidung_id = $request->nguoidung_id;
 			$donHang->ngaydat = $request->ngaydat;

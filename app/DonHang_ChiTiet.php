@@ -20,5 +20,5 @@ class DonHang_ChiTiet extends Model
 	public function vattu()
 	{
 		return $this->belongsTo('App\VatTu', 'vattu_id');
-	}
+	} 
 }

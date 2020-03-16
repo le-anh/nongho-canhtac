@@ -17,4 +17,4 @@ class DonHang extends Model
 	{
 		return $this->belongsTo('App\NguoiDung', 'nguoidung_id');
 	}
-}
+} 

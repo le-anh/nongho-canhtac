@@ -164,7 +164,7 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'DonHangChiTietController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'DonHangChiTietController@postDelete')->name('delete');
 
-	});
+	}); 
 
 });
 
