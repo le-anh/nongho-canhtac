@@ -97,6 +97,18 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 
 	});
 
+	/* Vat Tu */
+	Route::prefix('vat-tu')->name('vattu.')->group(function () {
+
+		Route::get('', 'VatTuController@getIndex')->name('index');
+		Route::get('create', 'VatTuController@getCreate')->name('create');
+		Route::post('store', 'VatTuController@postCreate')->name('store');
+		Route::get('edit/{id}', 'VatTuController@getEdit')->name('edit');
+		Route::put('update', 'VatTuController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'VatTuController@postDelete')->name('delete');
+
+	});
+
 });
 
 
