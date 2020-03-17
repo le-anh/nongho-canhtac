@@ -46,12 +46,12 @@
             </div>
 			<div class="form-group">
               <label for="dactinh">Đặc tính <abbr title="Required">*</abbr></label>
-              <input type="textarea" class="form-control @error('dactinh') is-invalid @enderror" id="dactinh" name="dactinh" value="{{old('dactinh',  $phanBon->dactinh)}}" placeholder="Đặc tính" autofocus>
+              <textarea class="form-control @error('dactinh') is-invalid @enderror" id="dactinh" name="dactinh" rows="2" placeholder="Đặc tính" autofocus>{{old('dactinh', $phanBon->dactinh)}}</textarea>
               @error('dactinh')  <div class="invalid-feedback"> <i class="fa fa-exclamation-circle fa-fw"></i> {{ $message }} </div>  @enderror
             </div>
 			<div class="form-group">
               <label for="thanhphanhamluong">Thành phần hàm lượng <abbr title="Required">*</abbr></label>
-              <input type="textarea" class="form-control @error('thanhphanhamluong') is-invalid @enderror" id="thanhphanhamluong" name="thanhphanhamluong" value="{{old('thanhphanhamluong',  $phanBon->thanhphanhamluong)}}" placeholder="Thành phần hàm lượng" autofocus>
+              <textarea class="form-control @error('thanhphanhamluong') is-invalid @enderror" id="thanhphanhamluong" name="thanhphanhamluong" rows="2" placeholder="Đặc tính" autofocus>{{old('thanhphanhamluong', $phanBon->thanhphanhamluong)}}</textarea>
               @error('thanhphanhamluong')  <div class="invalid-feedback"> <i class="fa fa-exclamation-circle fa-fw"></i> {{ $message }} </div>  @enderror
             </div>
 			<div class="form-group">

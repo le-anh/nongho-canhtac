@@ -11,5 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuyTrinh extends Model
 {
-	//
+	protected $table ='quytrinh';
+	public function NongSan()
+	{
+		return $this->belongsTo('App\NongSan', 'nongsan_id');
+	}
 }

@@ -141,6 +141,26 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::put('update', 'TieuChuanSXController@postEdit')->name('update');
 		Route::delete('delete/{id}', 'TieuChuanSXController@postDelete')->name('delete');
 	});
+	/* Quy Trinh */
+	Route::prefix('quy-trinh')->name('quytrinh.')->group(function () {
+
+		Route::get('', 'QuyTrinhController@getIndex')->name('index');
+		Route::get('create', 'QuyTrinhController@getCreate')->name('create');
+		Route::post('store', 'QuyTrinhController@postCreate')->name('store');
+		Route::get('edit/{id}', 'QuyTrinhController@getEdit')->name('edit');
+		Route::put('update', 'QuyTrinhController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'QuyTrinhController@postDelete')->name('delete');
+	});
+	/* Giai Doan Quy Trinh */
+	Route::prefix('giai-doan-quy-trinh')->name('giaidoanquytrinh.')->group(function () {
+
+		Route::get('', 'GiaiDoanQuyTrinhController@getIndex')->name('index');
+		Route::get('create', 'GiaiDoanQuyTrinhController@getCreate')->name('create');
+		Route::post('store', 'GiaiDoanQuyTrinhController@postCreate')->name('store');
+		Route::get('edit/{id}', 'GiaiDoanQuyTrinhController@getEdit')->name('edit');
+		Route::put('update', 'GiaiDoanQuyTrinhController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'GiaiDoanQuyTrinhController@postDelete')->name('delete');
+	});
 
 	/* Don Hang */
 	Route::prefix('don-hang')->name('donhang.')->group(function () {
