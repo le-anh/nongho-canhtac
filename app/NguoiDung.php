@@ -15,6 +15,7 @@ class NguoiDung extends Authenticatable
 {
 	use Notifiable;
 	
+	protected $table = 'nguoidung';
 	protected $fillable = [
 		'name', 'email', 'password',
 	];
