@@ -54,11 +54,17 @@
 				<a href=" {{ route('farmer.vattu.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Vật tư</span></a>
 			</li>
 
-      <li class="menu-item">
+			<li class="menu-item">
 				<a href=" {{ route('farmer.loaitieuchuansx.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại tiêu chuẩn sản xuất</span></a>
 			</li>
 			<li class="menu-item">
 				<a href=" {{ route('farmer.tieuchuansx.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Tiêu chuẩn sản xuất</span></a>
+			</li>
+			<li class="menu-item">
+				<a href=" {{ route('farmer.quytrinh.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Quy trình</span></a>
+			</li>
+			<li class="menu-item">
+				<a href=" {{ route('farmer.giaidoanquytrinh.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Giai đoạn quy trình</span></a>
 			</li>
 
 		</ul>

@@ -11,5 +11,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class NongSan extends Model
 {
-	//
+	protected $table = 'nongsan';
 }
