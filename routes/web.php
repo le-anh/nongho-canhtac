@@ -142,6 +142,30 @@ Route::prefix('farmer')->name('farmer.')->group(function () {
 		Route::delete('delete/{id}', 'TieuChuanSXController@postDelete')->name('delete');
 	});
 
+	/* Don Hang */
+	Route::prefix('don-hang')->name('donhang.')->group(function () {
+
+		Route::get('', 'DonHangController@getIndex')->name('index');
+		Route::get('create', 'DonHangController@getCreate')->name('create');
+		Route::post('store', 'DonHangController@postCreate')->name('store');
+		Route::get('edit/{id}', 'DonHangController@getEdit')->name('edit');
+		Route::put('update', 'DonHangController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'DonHangController@postDelete')->name('delete');
+
+	});
+
+	/* Don Hang Chi Tiet */
+	Route::prefix('don-hang-chi-tiet')->name('donhangchitiet.')->group(function () {
+
+		Route::get('', 'DonHangChiTietController@getIndex')->name('index');
+		Route::get('create', 'DonHangChiTietController@getCreate')->name('create');
+		Route::post('store', 'DonHangChiTietController@postCreate')->name('store');
+		Route::get('edit/{id}', 'DonHangChiTietController@getEdit')->name('edit');
+		Route::put('update', 'DonHangChiTietController@postEdit')->name('update');
+		Route::delete('delete/{id}', 'DonHangChiTietController@postDelete')->name('delete');
+
+	}); 
+
 });
 
 

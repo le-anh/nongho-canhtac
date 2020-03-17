@@ -54,6 +54,14 @@
 				<a href=" {{ route('farmer.vattu.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Vật tư</span></a>
 			</li>
 
+			<li class="menu-item">
+				<a href=" {{ route('farmer.donhang.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Đơn hàng</span></a>
+			</li>
+
+			<li class="menu-item">
+				<a href=" {{ route('farmer.donhangchitiet.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Đơn hàng Chi tiết</span></a>
+			</li>
+
       <li class="menu-item">
 				<a href=" {{ route('farmer.loaitieuchuansx.index') }} " class="menu-link"><span class="menu-icon fas fa-info-circle"></span> <span class="menu-text">Loại tiêu chuẩn sản xuất</span></a>
 			</li>
